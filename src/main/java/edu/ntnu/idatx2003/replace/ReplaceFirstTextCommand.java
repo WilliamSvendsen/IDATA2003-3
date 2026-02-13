@@ -1,6 +1,4 @@
-package edu.ntnu.idatx2003;
-
-import java.util.Objects;
+package edu.ntnu.idatx2003.replace;
 
 public class ReplaceFirstTextCommand extends ReplaceTextCommand {
 
@@ -10,11 +8,7 @@ public class ReplaceFirstTextCommand extends ReplaceTextCommand {
 
     @Override
     public String execute(String text) {
-        Objects.requireNonNull(text, "text cannot be null");
-
         String target = getTarget();
-        if (target.isEmpty()) return text;
-
         int index = text.indexOf(target);
         if (index < 0) return text;
 
