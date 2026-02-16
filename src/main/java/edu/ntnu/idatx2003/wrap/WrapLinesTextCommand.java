@@ -12,7 +12,7 @@ public class WrapLinesTextCommand extends WrapTextCommand {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < lines.length; i++) {
-            if (i > 0) sb.append("\\R");
+            if (i > 0) sb.append("\n");
             sb.append(getOpening()).append(lines[i]).append(getEnd());
         }
         return sb.toString();

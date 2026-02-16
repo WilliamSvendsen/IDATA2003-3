@@ -13,7 +13,8 @@ public class WrapTextCommand implements TextCommand {
 
     @Override
     public String execute(String text) {
-        return opening + end;
+        if (text.isEmpty()) return text;
+        return opening + text + end;
     }
 
     public String getOpening() { return opening; }
