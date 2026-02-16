@@ -8,11 +8,11 @@ public class WrapLinesTextCommand extends WrapTextCommand {
 
     @Override
     public String execute(String text) {
-        String[] lines = text.split("\n");
+        String[] lines = text.split("\\R");
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < lines.length; i++) {
-            if (i > 0) sb.append("\n");
+            if (i > 0) sb.append("\\R");
             sb.append(getOpening()).append(lines[i]).append(getEnd());
         }
         return sb.toString();

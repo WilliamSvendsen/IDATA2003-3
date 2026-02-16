@@ -13,7 +13,7 @@ public class WrapTextCommand implements TextCommand {
 
     @Override
     public String execute(String text) {
-        return opening + text.trim() + end;
+        return opening + end;
     }
 
     public String getOpening() { return opening; }
