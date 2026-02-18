@@ -1,5 +1,7 @@
 package edu.ntnu.idatx2003.wrap;
 
+import edu.ntnu.idatx2003.replace.ReplaceFirstTextCommand;
+
 public class WrapSelectionTextCommand extends WrapTextCommand {
     private final String selection;
 
@@ -11,7 +13,10 @@ public class WrapSelectionTextCommand extends WrapTextCommand {
     @Override
     public String execute(String text) {
         if (selection.isEmpty()) return text;
-        return text.replace(selection, getOpening() + selection + getEnd());
+        return new ReplaceFirstTextCommand(
+                selection,
+                getOpening() + selection + getEnd()
+        ).execute(text);
     }
 
     public String getSelection() { return selection; }
